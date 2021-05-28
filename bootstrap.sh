@@ -14,9 +14,7 @@ export NVM_DIR="$HOME/.nvm"
 . $NVM_DIR/nvm.sh
 
 # clone kibana repo, check out branch, and configure environment
-git clone "$REPO.git"
-cd kibana
-git checkout $BRANCH
+git clone --depth 1 "${REPO}.git" -b ${BRANCH}
 cp /tmp/kibana.dev.yml config/
 touch kibana.log
 
